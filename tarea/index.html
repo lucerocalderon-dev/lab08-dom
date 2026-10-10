@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Notas de Estudiantes</title>
+
+</head>
+<body>
+  <h1>Sistema de Registro de Notas</h1>
+
+  <!-- Formulario de ingreso -->
+  <form id="nota-form">
+    <div>
+      <label for="nombre">Nombre del estudiante:</label>
+      <input type="text" id="nombre" placeholder="Ej. Ana García">
+    </div>
+    <div>
+      <label for="calificacion">Calificación (0 - 20):</label>
+      <input type="number" id="calificacion" min="0" max="20" step="0.1" placeholder="Ej. 16.5">
+    </div>
+    <button type="submit">Agregar Nota</button>
+  </form>
+
+  <!-- Mensaje de validación -->
+  <div id="mensaje-error" style="color: red; font-weight: bold; margin-top: 10px;"></div>
+
+  <!-- Búsqueda / Filtro -->
+  <h2>Lista de Estudiantes</h2>
+  <input type="text" id="buscador" placeholder="Buscar por nombre...">
+
+  <!-- Tabla de resultados -->
+  <table border="1" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th>Estudiante</th>
+        <th>Nota</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="lista-notas">
+      <!-- Los registros se generan dinámicamente -->
+    </tbody>
+  </table>
+
+  <!-- Promedio general -->
+  <h3>Promedio General del Curso: <span id="promedio-general">0.00</span></h3>
+
+  <script src="app.js"></script>
+</body>
+</html>
